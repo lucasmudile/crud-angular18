@@ -1,0 +1,30 @@
+<div class="container">
+    <br>
+    <br>
+    <app-creat-task></app-creat-task>
+    <br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserId</th>
+        <th scope="col">Title</th>
+        <th scope="col">IsCompleted</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        @for (item of data; track $index) {
+            <tr>
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.userId}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.completed}}</td>
+                <td><button type="button" class="btn btn-primary  me-2">Edit</button> <button (click)="delete(item.id)" type="button" class="btn btn-danger">Delete</button></td>
+              </tr>
+        }
+      
+    </tbody>
+  </table>
+</div>
